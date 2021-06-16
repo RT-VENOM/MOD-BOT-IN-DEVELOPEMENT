@@ -50,6 +50,6 @@ async def invite(ctx):
     embed.set_author(name = "𝕯𝖊𝖆𝖉 ℵᛨℵJᏘ#1412", url='https://www.youtube.com/channel/UCt0g05Q4JTm1a5mxGj7JPQQ', icon_url= 'https://cdn.discordapp.com/attachments/845324641521107004/845391299196747796/3dgifmaker81594_1.gif')
     embed.set_image(url= 'https://sunasia.gg/wp-content/uploads/2019/11/q25m2Jb-1024x500.png')
     await ctx.author.send(embed=embed)
-    await msg.add_reaction(✔️)
+    await msg.add_reaction(:white_check_mark:)
 
 Bot.run(token)
