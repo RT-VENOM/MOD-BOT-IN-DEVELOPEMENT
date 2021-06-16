@@ -36,7 +36,6 @@ async def on_guild_join(guild):
     
 @Bot.command()
 async def invite(ctx):
-    msg.add_reaction(✔️)
     embed=discord.Embed(
         title="**======== *WANNA ADD ME IN YOUR SERVER!* ========**",
         description=f"""Do you liked using { Bot.user.mention } and wanna add `MOD BOT` in your server
