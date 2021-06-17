@@ -58,12 +58,12 @@ async def invite(ctx):
 @client.command()
 @commands.has_permissions(ban_members= True )
 async def ban(ctx, member: discord.Member, *, reason = None):
-    if member == ctx.message.author:
+    if member == None or member == ctx.message.author:
         await ctx.channel.send("`You cannot ban yourself`")
         return
-    elif member == None:
-        await ctx.channel.send("`You cannot ban anyone who does not exist in this server`")
-        return
+    if reason == None:
+        reason = "no reason applied"
+    
     await ctx.message.add_reaction('✅')
     embedfordm=discord.Embed(
         title="**BAN NOTICE**",
