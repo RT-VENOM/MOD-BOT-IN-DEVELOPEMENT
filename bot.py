@@ -36,6 +36,7 @@ async def on_guild_join(guild):
     
 @client.command()
 async def invite(ctx):
+    await ctx.message.add_reaction('✅')
     embed=discord.Embed(
         title="**======== *WANNA ADD ME IN YOUR SERVER!* ========**",
         description=f"""Do you liked using { client.user.mention } and wanna add `MOD BOT` in your server
@@ -50,5 +51,7 @@ async def invite(ctx):
     embed.set_author(name = "𝕯𝖊𝖆𝖉 ℵᛨℵJᏘ#1412", url='https://www.youtube.com/channel/UCt0g05Q4JTm1a5mxGj7JPQQ', icon_url= 'https://cdn.discordapp.com/attachments/845324641521107004/845391299196747796/3dgifmaker81594_1.gif')
     embed.set_image(url= 'https://media.discordapp.net/attachments/854545082634862622/854931871291670528/download_6_Fotor.jpg')
     await ctx.author.send(embed=embed)
+    
+    
 
 client.run(token)
