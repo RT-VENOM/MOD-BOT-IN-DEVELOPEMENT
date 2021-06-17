@@ -21,7 +21,7 @@ async def on_guild_join(guild,user):
     channel = discord.utils.get(guild.channels, name= 'general',)
     embed=discord.Embed(
         title="**======== *Thanks For Adding Me!* ========**",
-        description=f"""Thanks for adding me to {guild.name}! You can use the `/help` command to get started! if you face any issues using """  + client.user.mention + """ you can submit it in our support server so that we can fix it as soon as possible
+        description=f"""Thanks for adding me to {guild.name}! You can use the `/help` command to get started! if you face any issues using """  + Bot.user.mention + """ you can submit it in our support server so that we can fix it as soon as possible
         
 
 
