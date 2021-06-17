@@ -80,11 +80,8 @@ async def ban(ctx, member: discord.Member, *, reason = None):
 @ban.error
 async def on_command_error(error, ctx):
     if isinstance(error, commands.MissingPermissions):
-        embedforbanperm=discord.Embed(
-        title="**COMMAND ERROR**",
-        description=f"""{ ctx.author.mention } you don't have permission to use this command""",
-        color=0xd89522)
-        ctx.send(embed=embedforbanperm)
+        await ctx.send(** You dont have permissions to use this command!**) 
+
 
     
     
