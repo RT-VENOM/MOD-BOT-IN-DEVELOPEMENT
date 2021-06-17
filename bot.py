@@ -66,8 +66,8 @@ async def ban(ctx, member: discord.Member, *, reason = None):
         title="**MODERATION COMMAND**",
         description=f"""{ member.mention } is banned from the server by { ctx.author.mention }""",
         color=0xd89522)
-    embed.set_thumbnail(url = 'https://media.discordapp.net/attachments/841947091659653162/854947838055153664/Check_mark_animation.gif?width=631&height=473')
-    embed.set_author(name = "BAN COMMAND EXECUTED", icon_url= "https://media.discordapp.net/attachments/841947091659653162/854947838055153664/Check_mark_animation.gif?width=631&height=473")
+    embed.set_thumbnail(url = 'https://media.discordapp.net/attachments/841947091659653162/854969004699156480/output-onlinegiftools.gif')
+    embed.set_author(name = "BAN COMMAND EXECUTED", icon_url= "https://media.discordapp.net/attachments/841947091659653162/854969004699156480/output-onlinegiftools.gif")
     await ctx.send(embed = embed)
     
     
