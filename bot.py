@@ -58,7 +58,7 @@ async def invite(ctx):
 @client.command()
 @commands.has_permissions(ban_members= True )
 async def ban(ctx, member: discord.Member, *, reason = None):
-    if member == None or member == ctx.message.author:
+    if member == ctx.message.author:
         await ctx.channel.send("`You cannot ban yourself`")
         return
     await ctx.message.add_reaction('✅')
@@ -77,7 +77,15 @@ async def ban(ctx, member: discord.Member, *, reason = None):
     await ctx.send(embed = embed)
     
     
-    
+@ban.error
+async def on_command_error(error, ctx):
+    if isinstance(error, commands.MissingPermissions):
+        embedforbanperm=discord.Embed(
+        title="**COMMAND ERROR**",
+        description=f"""{ ctx.author.mention } you don't have permission to use this command""",
+        color=0xd89522)
+        ctx.send(embed=embedforbanperm)
+
     
     
 
