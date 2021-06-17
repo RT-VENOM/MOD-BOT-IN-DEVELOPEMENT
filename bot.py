@@ -48,7 +48,7 @@ async def invite(ctx):
     embed.set_footer(text = "ENJOY USING ME IN YOUR SERVER")
     embed.set_thumbnail(url = 'https://cdn.discordapp.com/attachments/845324641521107004/845391299196747796/3dgifmaker81594_1.gif')
     embed.set_author(name = "𝕯𝖊𝖆𝖉 ℵᛨℵJᏘ#1412", url='https://www.youtube.com/channel/UCt0g05Q4JTm1a5mxGj7JPQQ', icon_url= 'https://cdn.discordapp.com/attachments/845324641521107004/845391299196747796/3dgifmaker81594_1.gif')
-    embed.set_image(url= 'https://discord.com/channels/841947091205881887/841947091659653162/854923622744588310')
+    embed.set_image(url= 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fgraphicriver.net%2Fitem%2Fexsavior-gaminggoogleslide-template%2F26817705&psig=AOvVaw0WsyKBG8FMKXX7jX6AtRfp&ust=1623987346193000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCICk1a3enfECFQAAAAAdAAAAABAJ')
     await ctx.author.send(embed=embed)
 
 Bot.run(token)
