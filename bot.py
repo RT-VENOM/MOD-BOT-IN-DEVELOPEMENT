@@ -56,9 +56,6 @@ async def invite(ctx):
     
 @client.command()
 @commands.has_permissions(ban_members= True )
-else:
-    await ctx.send("`you don't have the permission to ban`")
-    await ctx.author.send("`you don't have the permission to ban`")
 async def ban(ctx, member: discord.Member, *, reason = None):
     if member == None or member == ctx.message.author:
         await ctx.channel.send("`You cannot ban yourself`")
@@ -72,6 +69,10 @@ async def ban(ctx, member: discord.Member, *, reason = None):
     embed.set_thumbnail(url = 'https://media.discordapp.net/attachments/841947091659653162/854969004699156480/output-onlinegiftools.gif')
     embed.set_author(name = "BAN COMMAND EXECUTED", icon_url= "https://media.discordapp.net/attachments/841947091659653162/854969004699156480/output-onlinegiftools.gif")
     await ctx.send(embed = embed)
+@commands.has_permissions(ban_members= False )
+async def ban(ctx, member: discord.Member, *, reason = None):
+    await ctx.send("`you don't have the permission to ban`")
+    await ctx.author.send("`you don't have the permission to ban`")
     
     
     
