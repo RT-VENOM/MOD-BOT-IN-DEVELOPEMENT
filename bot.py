@@ -5,23 +5,23 @@ from config import token
 from discord import client 
 from discord.ext import commands
 from discord import utils
-Bot = commands.Bot(command_prefix='/')
+client = commands.Bot(command_prefix='/')
 
 
 
 
 
-@Bot.event
+@client.event
 async def on_ready():
     print("bot is online")
 
 
-@Bot.event
-async def on_guild_join(guild,user):
+@client.event
+async def on_guild_join(guild):
     channel = discord.utils.get(guild.channels, name= 'general',)
     embed=discord.Embed(
         title="**======== *Thanks For Adding Me!* ========**",
-        description=f"""Thanks for adding me to {guild.name}! You can use the `/help` command to get started! if you face any issues using """  + Bot.user.mention + """ you can submit it in our support server so that we can fix it as soon as possible
+        description=f"""Thanks for adding me to {guild.name}! You can use the `/help` command to get started! if you face any issues using """  + client.user.mention + """ you can submit it in our support server so that we can fix it as soon as possible
         
 
 
@@ -34,11 +34,11 @@ async def on_guild_join(guild,user):
     embed.set_image(url= 'https://media.discordapp.net/attachments/854545082634862622/854932493047955517/download_5_Fotor.jpg')
     await channel.send(embed=embed)
     
-@Bot.command()
+@client.command()
 async def invite(ctx):
     embed=discord.Embed(
         title="**======== *WANNA ADD ME IN YOUR SERVER!* ========**",
-        description=f"""Do you liked using { Bot.user.mention } and wanna add `MOD BOT` in your server
+        description=f"""Do you liked using { client.user.mention } and wanna add `MOD BOT` in your server
         
 
 
@@ -51,4 +51,4 @@ async def invite(ctx):
     embed.set_image(url= 'https://media.discordapp.net/attachments/854545082634862622/854931871291670528/download_6_Fotor.jpg')
     await ctx.author.send(embed=embed)
 
-Bot.run(token)
+client.run(token)
