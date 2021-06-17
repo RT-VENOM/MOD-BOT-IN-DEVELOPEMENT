@@ -61,6 +61,9 @@ async def ban(ctx, member: discord.Member, *, reason = None):
     if member == ctx.message.author:
         await ctx.channel.send("`You cannot ban yourself`")
         return
+    elif member == None:
+        await ctx.channel.send("`You cannot ban anyone who does not exist in this server`")
+        return
     await ctx.message.add_reaction('✅')
     embedfordm=discord.Embed(
         title="**BAN NOTICE**",
@@ -80,7 +83,7 @@ async def ban(ctx, member: discord.Member, *, reason = None):
 @ban.error
 async def on_command_error(error, ctx):
     if isinstance(error, commands.MissingPermissions):
-        await ctx.send(** You dont have permissions to use this command!**) 
+        await ctx.send(f"{ ctx.author.mention }** You dont have permissions to use this command!**") 
 
 
     
