@@ -70,6 +70,11 @@ async def ban(ctx, member: discord.Member, *, reason = None):
     embed.set_thumbnail(url = 'https://media.discordapp.net/attachments/841947091659653162/854969004699156480/output-onlinegiftools.gif')
     embed.set_author(name = "BAN COMMAND EXECUTED", icon_url= "https://media.discordapp.net/attachments/841947091659653162/854969004699156480/output-onlinegiftools.gif")
     await ctx.send(embed = embed)
+    embedfordm=discord.Embed(
+        title="**BAN NOTICE**",
+        description=f"""{ member.mention } you are banned from { ctx.guild.name } by { ctx.author.mention } due to some unavoidable reasons which were created due to your activity in the server which are breaking the rules of { ctx.guild.name }.""",
+        color=0xd89522)
+    await ctx.member.send(embed = embedfordm)
     
     
     
