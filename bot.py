@@ -55,8 +55,11 @@ async def invite(ctx):
     
     
 @client.command()
-@commands.has_permission(ban_members= True )
+@commands.has_permissions(ban_members= True )
 async def ban(self, ctx, member: discord.Member, *, reason = None):
+    if member == None or member == ctx.message.author:
+        await ctx.channel.send("You cannot ban yourself")
+        return
     await ctx.message.add_reaction('✅')
     await member.ban(reason= reason)
     embed=discord.Embed(
