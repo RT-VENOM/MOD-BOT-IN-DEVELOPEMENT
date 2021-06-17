@@ -31,7 +31,7 @@ async def on_guild_join(guild):
     embed.set_footer(text = "ENJOY USING ME IN THIS SERVER")
     embed.set_thumbnail(url = 'https://cdn.discordapp.com/attachments/845324641521107004/845391299196747796/3dgifmaker81594_1.gif')
     embed.set_author(name = "𝕯𝖊𝖆𝖉 ℵᛨℵJᏘ#1412", url='https://www.youtube.com/channel/UCt0g05Q4JTm1a5mxGj7JPQQ', icon_url= 'https://cdn.discordapp.com/attachments/845324641521107004/845391299196747796/3dgifmaker81594_1.gif')
-    embed.set_image(url= 'https://sunasia.gg/wp-content/uploads/2019/11/q25m2Jb-1024x500.png')
+    embed.set_image(url= 'https://discord.com/channels/841947091205881887/841947091659653162/854923489593262090')
     await channel.send(embed=embed)
     
 @Bot.command()
@@ -48,7 +48,7 @@ async def invite(ctx):
     embed.set_footer(text = "ENJOY USING ME IN YOUR SERVER")
     embed.set_thumbnail(url = 'https://cdn.discordapp.com/attachments/845324641521107004/845391299196747796/3dgifmaker81594_1.gif')
     embed.set_author(name = "𝕯𝖊𝖆𝖉 ℵᛨℵJᏘ#1412", url='https://www.youtube.com/channel/UCt0g05Q4JTm1a5mxGj7JPQQ', icon_url= 'https://cdn.discordapp.com/attachments/845324641521107004/845391299196747796/3dgifmaker81594_1.gif')
-    embed.set_image(url= 'https://sunasia.gg/wp-content/uploads/2019/11/q25m2Jb-1024x500.png')
+    embed.set_image(url= 'https://discord.com/channels/841947091205881887/841947091659653162/854923622744588310')
     await ctx.author.send(embed=embed)
 
 Bot.run(token)
