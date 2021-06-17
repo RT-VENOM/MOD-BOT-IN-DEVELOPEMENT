@@ -5,7 +5,7 @@ from config import token
 from discord import client 
 from discord.ext import commands
 from discord import utils
-client = commands.Bot(command_prefix='/')
+client = commands.Bot(command_prefix='?')
 
 
 
