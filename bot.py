@@ -61,9 +61,6 @@ async def ban(ctx, member: discord.Member, *, reason = None):
     if member == ctx.message.author:
         await ctx.channel.send("`You cannot ban yourself`")
         return
-    elif user == None:
-        await ctx.channel.send("`there is no one named as you mentioned`")
-        return
     await ctx.message.add_reaction('✅')
     embedfordm=discord.Embed(
         title="**BAN NOTICE**",
