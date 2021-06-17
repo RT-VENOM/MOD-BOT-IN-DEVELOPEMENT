@@ -17,7 +17,7 @@ async def on_ready():
 
 
 @Bot.event
-async def on_guild_join(guild):
+async def on_guild_join(guild,user):
     channel = discord.utils.get(guild.channels, name= 'general',)
     embed=discord.Embed(
         title="**======== *Thanks For Adding Me!* ========**",
