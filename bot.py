@@ -65,7 +65,7 @@ async def ban(ctx, member: discord.Member, *, reason = None):
         return
     if reason == None:
         reason = "no reason applied"
-    if user.bot:
+    if member.bot:
         await ctx.message.add_reaction('❌')
         embedbot=discord.Embed(
         title="**MODERATION COMMAND EXECUTION CANCELLED**",
