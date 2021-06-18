@@ -73,17 +73,17 @@ async def ban(ctx, member: discord.Member, *, reason = None):
     await member.ban(reason= reason)
     embed=discord.Embed(
         title="**MODERATION COMMAND**",
-        description=f"""{ member.mention } is banned from the server by { ctx.author.mention }""",
+        description=f"""{member.mention}  is banned from the server by  { ctx.author.mention }""",
         color=0xd89522)
     embed.set_thumbnail(url = 'https://media.discordapp.net/attachments/841947091659653162/854969004699156480/output-onlinegiftools.gif')
     embed.set_author(name = "BAN COMMAND EXECUTED", icon_url= "https://media.discordapp.net/attachments/841947091659653162/854969004699156480/output-onlinegiftools.gif")
     await ctx.send(embed = embed)
-    exception
-    @ban.error
-    async def on_command_error(error, ctx):
-        if isinstance(error, commands.MissingPermissions):
-            await ctx.author.send(f'{ ctx.author.mention } you dont have permission to ban anyone in { ctx.guild.name }')
     
+    
+@ban.error
+    async def on_command_error(ctx, error):
+        if isinstance(error, commands.MissingPermissions):
+            await ctx.author.send(f'{ ctx.author.mention } you dont have permission to ban anyone in { ctx.guild.name }')    
 
 
 
