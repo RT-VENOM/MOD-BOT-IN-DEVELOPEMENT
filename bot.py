@@ -66,12 +66,13 @@ async def ban(ctx, member: discord.Member, *, reason = None):
     if reason == None:
         reason = "no reason applied"
     if member.bot:
-        await ctx.message.add_reaction('❌')
         embedbot=discord.Embed(
             title="**MODERATION COMMAND EXECUTION CANCELLED**",
             description=f"""I cannot ban the user because the user you mentioned is a bot""",
             color=0xd89522)
         embed.set_thumbnail(url = 'https://media.discordapp.net/attachments/841947091659653162/854969004699156480/output-onlinegiftools.gif')
+        await ctx.message.add_reaction('❌')
+        await ctx.send('`banning process in progress`')
         await ctx.send(embed = embedbot)
         return
     
