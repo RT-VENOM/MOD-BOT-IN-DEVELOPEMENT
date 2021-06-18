@@ -83,7 +83,7 @@ async def ban(ctx, member: discord.Member, *, reason = None):
 @ban.error
 async def on_command_error(error, ctx):
     if isinstance(error, commands.MissingPermissions):
-        await ctx.send("you dont have permission to ban anyone") 
+        await ctx.send(f"{ ctx.author.mention } you dont have permission to ban anyone.") 
 
 
     
