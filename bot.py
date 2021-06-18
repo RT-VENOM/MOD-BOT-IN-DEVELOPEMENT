@@ -86,8 +86,12 @@ async def ban(ctx, member: discord.Member, *, reason = None):
 async def on_command_error(ctx, error):
     if isinstance(error, commands.MissingPermissions):
         await ctx.author.send(f'{ ctx.author.mention } you dont have permission to ban anyone in { ctx.guild.name }')    
-
-
+        embed4=discord.Embed(
+        title="**MODERATION COMMAND EXECUTION CANCELLED**",
+        description=f"""{ctx.author.mention}  you don't have permission to use the ban command""",
+        color=0xd89522)
+        embed.set_thumbnail(url = 'https://media.discordapp.net/attachments/841947091659653162/854969004699156480/output-onlinegiftools.gif')
+        await ctx.send(embed = embed4)
 
     
     
