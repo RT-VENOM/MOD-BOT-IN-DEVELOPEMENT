@@ -53,7 +53,9 @@ async def invite(ctx):
     embed.set_image(url= 'https://media.discordapp.net/attachments/854545082634862622/854931871291670528/download_6_Fotor.jpg')
     await ctx.author.send(embed=embed)
     
-    
+@client.event
+async def on_command_error(ctx, error):
+    pass
     
 @client.command()
 @commands.has_permissions(ban_members= True )
