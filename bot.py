@@ -31,7 +31,7 @@ async def on_guild_join(guild):
         color=0xd89522)
     embed.set_footer(text = "ENJOY USING ME IN THIS SERVER")
     embed.set_thumbnail(url = 'https://cdn.discordapp.com/attachments/845324641521107004/845391299196747796/3dgifmaker81594_1.gif')
-    embed.set_author(name = "𝕯𝖊𝖆𝖉 ℵᛨℵJᏘ#1412", url='https://www.youtube.com/channel/UCt0g05Q4JTm1a5mxGj7JPQQ', icon_url= 'https://cdn.discordapp.com/attachments/845324641521107004/845391299196747796/3dgifmaker81594_1.gif')
+    embed.set_author(name = "MOD BOT", url='https://www.youtube.com/channel/UCt0g05Q4JTm1a5mxGj7JPQQ', icon_url= 'https://cdn.discordapp.com/attachments/845324641521107004/845391299196747796/3dgifmaker81594_1.gif')
     embed.set_image(url= 'https://media.discordapp.net/attachments/854545082634862622/854932493047955517/download_5_Fotor.jpg')
     await channel.send(embed=embed)
     
