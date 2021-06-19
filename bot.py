@@ -65,7 +65,11 @@ async def ban(ctx, member: discord.Member, *, reason = None):
         await ctx.message.add_reaction('❌')
         embed = discord.Embed(
             title = "**BAN COMMAND EXECUTION FAILED**",
-            description = f"""**BAN COMMAND EXECUTION WAS CANCELLED BECAUSE THE USER YOU MENTIONED IS EITHER A USER WHO IS NOT A MEMBER OF THIS SERVER OR THIS IS YOUR ID.**""",
+            description = f"""**BAN COMMAND EXECUTION WAS CANCELLED BECAUSE THE USER YOU MENTIONED IS EITHER A USER WHO IS NOT A MEMBER OF THIS SERVER OR THIS IS YOUR ID.
+
+
+
+            Executed by { ctx.author.mention }**""",
             color=0xd89522
         )
         embed.set_footer(text= f"**the command was used by {ctx.author.mention}**")
@@ -81,7 +85,11 @@ async def ban(ctx, member: discord.Member, *, reason = None):
         await ctx.message.add_reaction('❌')
         embed = discord.Embed(
             title = "**BAN COMMAND EXECUTION FAILED**",
-            description = f"""**BAN COMMAND WAS CANCELLED BECAUSE THE MEMBER YOU MENTION IS A BOT.**""",
+            description = f"""**BAN COMMAND WAS CANCELLED BECAUSE THE MEMBER YOU MENTION IS A BOT.
+
+
+
+            Executed by { ctx.author.mention }**""",
             color=0xd89522
         )
         embed.set_footer(text= f"**the command was used by {ctx.author.mention}**")
@@ -115,7 +123,12 @@ async def on_command_error(ctx, error):
         await ctx.message.add_reaction('❌')    
         embed=discord.Embed(
         title="**MODERATION COMMAND EXECUTION CANCELLED**",
-        description=f"""**you don't have permission to use the ban command**""",
+        description=f"""**You don't have permission to use the ban command.
+
+
+
+
+        Executed by { ctx.author.mention }**""",
         color=0xd89522)
         embed.set_thumbnail(url = 'https://media.discordapp.net/attachments/841947091659653162/854969004699156480/output-onlinegiftools.gif')
         embed.set_author(name = f"**EXECUTED BY { ctx.author.mention }**")
