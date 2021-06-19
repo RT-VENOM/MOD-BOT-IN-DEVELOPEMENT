@@ -1,6 +1,7 @@
 import discord
 from discord.ext.commands.bot import Bot
 import config
+import asyncio
 from config import token
 from discord import client 
 from discord.ext import commands
@@ -61,13 +62,34 @@ async def on_command_error(ctx, error):
 @commands.has_permissions(ban_members= True )
 async def ban(ctx, member: discord.Member, *, reason = None):
     if member == None or member == ctx.message.author:
-        await ctx.channel.send("`You cannot ban yourself`")
+        await ctx.message.add_reaction('❌')
+        embed = discord.Embed(
+            title = "**BAN COMMAND EXECUTION FAILED**",
+            description = f"""**BAN COMMAND EXECUTION WAS CANCELLED BECAUSE THE USER YOU MENTIONED IS EITHER A USER WHO IS NOT A MEMBER OF THIS SERVER OR THIS IS YOUR ID. EXECUTED BY { ctx.author.mention }**""",
+            color=0xd89522
+        )
+        embed.set_footer(text= f"the command was used by {ctx.author.mention}")
+        
+        embed_variable = await ctx.send(embed = embed)
+        await asyncio.sleep(4)
+        await ctx.message.delete()
+        await embed_variable.delete()
         return
     if reason == None:
         reason = "no reason applied"
     if member.bot:
         await ctx.message.add_reaction('❌')
-        await ctx.send('`banning process execution is cancelled because the user you mentioned is a bot`')
+        embed = discord.Embed(
+            title = "**BAN COMMAND EXECUTION FAILED**",
+            description = f"""BAN COMMAND WAS CANCELLED BECAUSE THE MEMBER YOU MENTION IS A BOT. EXECUTED BY { ctx.author.mention }""",
+            color=0xd89522
+        )
+        embed.set_footer(text= f"the command was used by {ctx.author.mention}")
+        
+        embed_variabl = await ctx.send(embed = embed)
+        await asyncio.sleep(4)
+        await ctx.message.delete()
+        await embed_variabl.delete()
         return
     
     await ctx.message.add_reaction('✅')
@@ -95,8 +117,11 @@ async def on_command_error(ctx, error):
         description=f"""{ctx.author.mention}  you don't have permission to use the ban command""",
         color=0xd89522)
         embed.set_thumbnail(url = 'https://media.discordapp.net/attachments/841947091659653162/854969004699156480/output-onlinegiftools.gif')
-        await ctx.send(embed = embed)
+        error = await ctx.send(embed = embed)
         await ctx.author.send(f'{ ctx.author.mention } you dont have permission to ban anyone in { ctx.guild.name }')
+        await asyncio.sleep(4)
+        await ctx.message.delete()
+        await error.delete()
 
     
     
