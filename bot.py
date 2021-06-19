@@ -123,12 +123,12 @@ async def on_command_error(ctx, error):
         await ctx.message.add_reaction('❌')    
         embed=discord.Embed(
         title="**MODERATION COMMAND EXECUTION CANCELLED**",
-        description=f"""**You don't have permission to use the ban command.
+        description=f"""You don't have permission to use the ban command.
 
 
 
 
-Executed by { ctx.author.mention }**""",
+Executed by { ctx.author.mention }""",
         color=0xd89522)
         embed.set_thumbnail(url = 'https://media.discordapp.net/attachments/841947091659653162/854969004699156480/output-onlinegiftools.gif')
         error = await ctx.send(embed = embed)
