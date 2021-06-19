@@ -53,7 +53,7 @@ Then click on **[Invite me!](https://discord.com/api/oauth2/authorize?client_id=
         color=0xd89522)
     embed.set_footer(text = "ENJOY USING ME IN YOUR SERVER")
     embed.set_thumbnail(url = 'https://media.discordapp.net/attachments/841947091659653162/854969004699156480/output-onlinegiftools.gif')
-    embed.set_author(name = "𝕯𝖊𝖆𝖉 ℵᛨℵJᏘ#1412", url='https://www.youtube.com/channel/UCt0g05Q4JTm1a5mxGj7JPQQ', icon_url= 'https://cdn.discordapp.com/attachments/845324641521107004/845391299196747796/3dgifmaker81594_1.gif')
+    embed.set_author(name = "MOD BOT", url='https://www.youtube.com/channel/UCt0g05Q4JTm1a5mxGj7JPQQ', icon_url= 'https://cdn.discordapp.com/attachments/845324641521107004/845391299196747796/3dgifmaker81594_1.gif')
     embed.set_image(url= 'https://media.discordapp.net/attachments/854545082634862622/854931871291670528/download_6_Fotor.jpg')
     await ctx.author.send(embed=embed)
     
