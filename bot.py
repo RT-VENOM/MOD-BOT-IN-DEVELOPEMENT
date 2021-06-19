@@ -68,7 +68,7 @@ async def ban(ctx, member: discord.Member, *, reason = None):
             description = f"""**BAN COMMAND EXECUTION WAS CANCELLED BECAUSE THE USER YOU MENTIONED IS EITHER A USER WHO IS NOT A MEMBER OF THIS SERVER OR THIS IS YOUR ID.**""",
             color=0xd89522
         )
-        embed.set_footer(text= f"the command was used by {ctx.author.mention}")
+        embed.set_footer(text= f"**the command was used by {ctx.author.mention}**")
         embed.set_author(name = f"**EXECUTED BY { ctx.author.mention }**")
         embed_variable = await ctx.send(embed = embed)
         await asyncio.sleep(4)
@@ -84,7 +84,7 @@ async def ban(ctx, member: discord.Member, *, reason = None):
             description = f"""**BAN COMMAND WAS CANCELLED BECAUSE THE MEMBER YOU MENTION IS A BOT.**""",
             color=0xd89522
         )
-        embed.set_footer(text= f"the command was used by {ctx.author.mention}")
+        embed.set_footer(text= f"**the command was used by {ctx.author.mention}**")
         embed.set_author(name = f"**EXECUTED BY { ctx.author.mention }**")
 
         embed_variabl = await ctx.send(embed = embed)
