@@ -69,11 +69,12 @@ async def ban(ctx, member: discord.Member, *, reason = None):
 
 
 
-            Executed by { ctx.author.mention }**""",
+
+Executed by { ctx.author.mention }**""",
             color=0xd89522
         )
-        embed.set_footer(text= f"**the command was used by {ctx.author.mention}**")
-        embed.set_author(name = f"**EXECUTED BY { ctx.author.mention }**")
+        embed.set_footer(text= f"The command was used by {ctx.author.mention}")
+       
         embed_variable = await ctx.send(embed = embed)
         await asyncio.sleep(4)
         await ctx.message.delete()
@@ -89,11 +90,10 @@ async def ban(ctx, member: discord.Member, *, reason = None):
 
 
 
-            Executed by { ctx.author.mention }**""",
+Executed by { ctx.author.mention }**""",
             color=0xd89522
         )
-        embed.set_footer(text= f"**the command was used by {ctx.author.mention}**")
-        embed.set_author(name = f"**EXECUTED BY { ctx.author.mention }**")
+        embed.set_footer(text= f"The command was used by {ctx.author.mention}")
 
         embed_variabl = await ctx.send(embed = embed)
         await asyncio.sleep(4)
@@ -128,10 +128,9 @@ async def on_command_error(ctx, error):
 
 
 
-        Executed by { ctx.author.mention }**""",
+Executed by { ctx.author.mention }**""",
         color=0xd89522)
         embed.set_thumbnail(url = 'https://media.discordapp.net/attachments/841947091659653162/854969004699156480/output-onlinegiftools.gif')
-        embed.set_author(name = f"**EXECUTED BY { ctx.author.mention }**")
         error = await ctx.send(embed = embed)
         await ctx.author.send(f'{ ctx.author.mention } you dont have permission to ban anyone in { ctx.guild.name }')
         await asyncio.sleep(4)
