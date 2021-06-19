@@ -27,7 +27,8 @@ async def on_guild_join(guild):
         
 
 
-         Click on **[Support Server!](https://discord.gg/EJR9XFyg8f)** to join our support server.
+
+Click on **[Support Server!](https://discord.gg/EJR9XFyg8f)** to join our support server.
         """,
         color=0xd89522)
     embed.set_footer(text = "ENJOY USING ME IN THIS SERVER")
@@ -45,7 +46,9 @@ async def invite(ctx):
         
 
 
-         Then click on **[Invite me!](https://discord.com/api/oauth2/authorize?client_id=853890206570119188&permissions=4294967287&scope=bot)** to add `MOD BOT` in your server.
+
+
+Then click on **[Invite me!](https://discord.com/api/oauth2/authorize?client_id=853890206570119188&permissions=4294967287&scope=bot)** to add `MOD BOT` in your server.
         """,
         color=0xd89522)
     embed.set_footer(text = "ENJOY USING ME IN YOUR SERVER")
