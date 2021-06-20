@@ -18,6 +18,12 @@ async def on_ready():
     print("bot is online")
 
 
+help_command = commands.DefaultHelpCommand(
+    no_category = 'Commands'
+)
+
+
+
 @client.event
 async def on_guild_join(guild):
     channel = discord.utils.get(guild.channels, name= 'general',)
