@@ -64,25 +64,7 @@ async def on_command_error(ctx, error):
 @client.command()
 @commands.has_permissions(ban_members= True )
 async def ban(ctx, member: discord.Member, *, reason = None):
-    if isinstance(ctx.channel, discord.channel.DMChannel):
-        await ctx.message.add_reaction('❌')
-        embed = discord.Embed(
-            title = "**BAN COMMAND EXECUTION FAILED**",
-            description = f"""**BAN COMMAND CANNOT BE USED IN A DM CONVERSATION.
-
-
-
-
-Executed by { ctx.author.mention }**""",
-            color=0xd89522
-        )
-        embed.set_footer(text= f"The command was used by {ctx.author.mention}")
-       
-        embed_dm= await ctx.send(embed = embed)
-        await asyncio.sleep(10)
-        await ctx.message.delete()
-        await embed_dm.delete()
-        return
+    
     if member == None or member == ctx.message.author:
         await ctx.message.add_reaction('❌')
         embed = discord.Embed(
@@ -141,6 +123,25 @@ Executed by { ctx.author.mention }**""",
     
 @ban.error
 async def on_command_error(ctx, error):
+    if isinstance(ctx.channel, discord.channel.DMChannel):
+        await ctx.message.add_reaction('❌')
+        embed = discord.Embed(
+            title = "**BAN COMMAND EXECUTION FAILED**",
+            description = f"""**BAN COMMAND CANNOT BE USED IN A DM CONVERSATION.
+
+
+
+
+Executed by { ctx.author.mention }**""",
+            color=0xd89522
+        )
+        embed.set_footer(text= f"The command was used by {ctx.author.mention}")
+       
+        embed_dm= await ctx.send(embed = embed)
+        await asyncio.sleep(10)
+        await ctx.message.delete()
+        await embed_dm.delete()
+        return
     if isinstance(error, commands.MissingPermissions):
         await ctx.message.add_reaction('❌')    
         embed=discord.Embed(
