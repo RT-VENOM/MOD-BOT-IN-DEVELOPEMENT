@@ -37,7 +37,7 @@ Click on **[Support Server!](https://discord.gg/EJR9XFyg8f)** to join our suppor
     embed.set_image(url= 'https://media.discordapp.net/attachments/854545082634862622/854932493047955517/download_5_Fotor.jpg')
     await channel.send(embed=embed)
     
-@client.command(aliases = ['inv'], description = 'This command is used to invite the bot in your server')
+@client.command(aliases = ['inv'], brief = 'Bot invite command', description = 'This command is used to invite the bot in your server')
 async def invite(ctx):
     await ctx.message.add_reaction('✅')
     embed=discord.Embed(
@@ -61,7 +61,7 @@ Then click on **[Invite me!](https://discord.com/api/oauth2/authorize?client_id=
 async def on_command_error(ctx, error):
     pass
     
-@client.command(aliases = ['b'], brief = 'This command is used to ban a member', description = 'This command can be only executed when the bots role is above than the role of the members you want to ban, this bot cannot ban any bot as well as cannot ban any administrator, this bot requires send, add reaction, embed, attachment permission etc. When the command will be successful executed it will send a message in the channel where the command was executed but if the command is inappropriate like trying to ban a bot it will send a message telling you that you cannot ban a bot and it will delete both the command and the error message given by bot after 10 seconds of the execution of command.')
+@client.command(aliases = ['b'], brief = 'Used to ban a member', description = 'This command can be only executed when the bots role is above than the role of the members you want to ban, this bot cannot ban any bot as well as cannot ban any administrator, this bot requires send, add reaction, embed, attachment permission etc. When the command will be successful executed it will send a message in the channel where the command was executed but if the command is inappropriate like trying to ban a bot it will send a message telling you that you cannot ban a bot and it will delete both the command and the error message given by bot after 10 seconds of the execution of command.')
 @commands.has_permissions(ban_members= True )
 async def ban(ctx, member: discord.Member, *, reason = None):
     
