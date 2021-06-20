@@ -137,10 +137,7 @@ Executed by { ctx.author.mention }**""",
         )
         embed.set_footer(text= f"The command was used by {ctx.author.mention}")
        
-        embed_dm= await ctx.send(embed = embed)
-        await asyncio.sleep(10)
-        await ctx.message.delete()
-        await embed_dm.delete()
+        await ctx.send(embed = embed)
         return
     if isinstance(error, commands.MissingPermissions):
         await ctx.message.add_reaction('❌')    
