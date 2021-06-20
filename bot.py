@@ -37,7 +37,7 @@ Click on **[Support Server!](https://discord.gg/EJR9XFyg8f)** to join our suppor
     embed.set_image(url= 'https://media.discordapp.net/attachments/854545082634862622/854932493047955517/download_5_Fotor.jpg')
     await channel.send(embed=embed)
     
-@client.command()
+@client.command(aliases = ['inv'])
 async def invite(ctx):
     await ctx.message.add_reaction('✅')
     embed=discord.Embed(
@@ -61,7 +61,7 @@ Then click on **[Invite me!](https://discord.com/api/oauth2/authorize?client_id=
 async def on_command_error(ctx, error):
     pass
     
-@client.command()
+@client.command(aliases = ['b'])
 @commands.has_permissions(ban_members= True )
 async def ban(ctx, member: discord.Member, *, reason = None):
     
