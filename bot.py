@@ -79,7 +79,7 @@ Executed by { ctx.author.mention }**""",
         embed.set_footer(text= f"The command was used by {ctx.author.mention}")
        
         embed_variable = await ctx.send(embed = embed)
-        await asyncio.sleep(4)
+        await asyncio.sleep(10)
         await ctx.message.delete()
         await embed_variable.delete()
         return
@@ -99,7 +99,7 @@ Executed by { ctx.author.mention }**""",
         embed.set_footer(text= f"The command was used by {ctx.author.mention}")
 
         embed_variabl = await ctx.send(embed = embed)
-        await asyncio.sleep(4)
+        await asyncio.sleep(10)
         await ctx.message.delete()
         await embed_variabl.delete()
         return
@@ -136,7 +136,7 @@ Executed by { ctx.author.mention }""",
         embed.set_thumbnail(url = 'https://media.discordapp.net/attachments/841947091659653162/854969004699156480/output-onlinegiftools.gif')
         error = await ctx.send(embed = embed)
         await ctx.author.send(f'{ ctx.author.mention } you dont have permission to ban anyone in { ctx.guild.name }')
-        await asyncio.sleep(4)
+        await asyncio.sleep(10)
         await ctx.message.delete()
         await error.delete()
 
