@@ -18,9 +18,7 @@ async def on_ready():
     print("bot is online")
 
 
-help_command = commands.DefaultHelpCommand(
-    no_category = 'Commands'
-)
+
 
 
 
