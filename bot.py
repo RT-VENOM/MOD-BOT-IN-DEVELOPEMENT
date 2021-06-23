@@ -28,18 +28,18 @@ if __name__ == "__main__":
 
 @client.event
 async def on_ready():
-    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name=f'{len(client.guilds)} servers | -help'))
+    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name=f'{len(client.guilds)} servers | ?help'))
     print("bot is online")
 
 
 
 @client.event
 async def on_guild_join(guild):
-    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name=f'{len(client.guilds)} servers | -help'))
+    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name=f'{len(client.guilds)} servers | ?help'))
 
 @client.event
 async def on_guild_remove(guild):
-    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name=f'{len(client.guilds)} servers | -help'))
+    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name=f'{len(client.guilds)} servers | ?help'))
 
 
 
