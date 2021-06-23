@@ -6,7 +6,7 @@ from config import token
 import asyncio
 import os
 
-client = commands.Bot(command_prefix= '-')
+client = commands.Bot(command_prefix= '?')
 
 
 if __name__ == "__main__":
