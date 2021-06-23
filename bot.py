@@ -34,11 +34,11 @@ async def on_ready():
 
 
 @client.event
-async def on_guild_join():
+async def on_guild_join(guild):
     await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name=f'{len(client.guilds)} servers | -help'))
 
 @client.event
-async def on_guild_remove():
+async def on_guild_remove(guild):
     await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name=f'{len(client.guilds)} servers | -help'))
 
 
