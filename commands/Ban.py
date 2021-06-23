@@ -13,12 +13,12 @@ class Commands(commands.Cog, name="Commands"):
     def __init__(self, bot):
         self.bot = bot
     @commands.Cog.listener()
-    async def on_command_error(ctx, error):
+    async def on_command_error(self, ctx, error):
         pass
     
     @commands.command(aliases = ['b'], brief = '[Used to ban a member]', description = 'This command can be only executed when the bots role is above than the role of the members you want to ban, this bot cannot ban any bot as well as cannot ban any administrator, this bot requires send, add reaction, embed, attachment permission etc. When the command will be successful executed it will send a message in the channel where the command was executed but if the command is inappropriate like trying to ban a bot it will send a message telling you that you cannot ban a bot and it will delete both the command and the error message given by bot after 10 seconds of the execution of command.')
     @commands.has_permissions(ban_members= True )
-    async def ban(ctx, member: discord.Member, *, reason = None):
+    async def ban(self, ctx, member: discord.Member, *, reason = None):
     
         if member == None or member == ctx.message.author:
             await ctx.message.add_reaction('❌')
@@ -70,7 +70,7 @@ class Commands(commands.Cog, name="Commands"):
     
     
     @ban.error
-    async def on_command_error(ctx, error):
+    async def on_command_error(self, ctx, error):
         if isinstance(ctx.channel, discord.channel.DMChannel):
             await ctx.message.add_reaction('❌')
             embed = discord.Embed(
