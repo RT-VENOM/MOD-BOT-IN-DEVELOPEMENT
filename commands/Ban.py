@@ -26,7 +26,7 @@ class Commands(commands.Cog, name="Commands"):
                 title = "**BAN COMMAND EXECUTION FAILED**",
                 description = f"""**BAN COMMAND EXECUTION WAS CANCELLED BECAUSE THE USER YOU MENTIONED IS EITHER A USER WHO IS NOT A MEMBER OF THIS SERVER OR THIS IS YOUR ID.
     Executed by { ctx.author.mention }**""",
-            color=ctx.author.color
+            color=0xff0000
             )
             embed.set_footer(text= f"The command was used by {ctx.author.mention}")
        
@@ -43,7 +43,7 @@ class Commands(commands.Cog, name="Commands"):
                 title = "**BAN COMMAND EXECUTION FAILED**",
                 description = f"""**BAN COMMAND WAS CANCELLED BECAUSE THE MEMBER YOU MENTION IS A BOT.
     Executed by { ctx.author.mention }**""",
-                color=ctx.author.color
+                color=0xff0000
             )
             embed.set_footer(text= f"The command was used by {ctx.author.mention}")
 
