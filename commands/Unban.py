@@ -56,7 +56,7 @@ class Commands(commands.Cog, name="Commands"):
             await asyncio.sleep(4)
             embed2 = discord.Embed(
                 description = f"""**user is unbanned successfully**""",
-                color = 0xd89522
+                color = 0xff4300
             )
             embed2.set_thumbnail(url='https://media.discordapp.net/attachments/841947091659653162/854969004699156480/output-onlinegiftools.gif')
             await ctx.guild.unban(user)
@@ -71,7 +71,7 @@ class Commands(commands.Cog, name="Commands"):
         elif "no" in message.content:
             embed4 = discord.Embed(
                 description = f"""**unban command execution was cancelled**""",
-                color = 0x00fff3
+                color = 0xff4300
             )
             delete = await ctx.send(embed = embed4)
             await asyncio.sleep(4)
