@@ -96,6 +96,7 @@ class Commands(commands.Cog, name="Commands"):
             await asyncio.sleep(10)
             await ctx.message.delete()
             await error.delete()
+            return
 
 
 def setup(bot):
