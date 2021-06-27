@@ -56,7 +56,7 @@ class Commands(commands.Cog, name="Commands"):
             await asyncio.sleep(4)
             embed2 = discord.Embed(
                 description = f"""**user is unbanned successfully**""",
-                color = 0xff4300
+                color = 0x7cd700
             )
             embed2.set_thumbnail(url='https://media.discordapp.net/attachments/841947091659653162/854969004699156480/output-onlinegiftools.gif')
             await ctx.guild.unban(user)
