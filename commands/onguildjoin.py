@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 import discord.utils
-from discord.utils import find 
+
 
 
 
@@ -15,7 +15,7 @@ class Commands(commands.Cog, name="Commands"):
     @commands.Cog.listener()
     
     async def on_guild_join(guild, ctx):
-        general = find(lambda x: x.name == 'general',  guild.text_channels)
+        general = discord.utils.get(ctx.guild.channels, name="general")
         if not general:
             return
 
