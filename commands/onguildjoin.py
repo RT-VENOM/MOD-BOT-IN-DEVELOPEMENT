@@ -14,7 +14,7 @@ class Commands(commands.Cog, name="Commands"):
 
     @commands.Cog.listener()
     
-    async def on_guild_join(guild, ctx):
+    async def on_guild_join(Guild, ctx):
         general = discord.utils.get(ctx.guild.channels, name="general")
         if not general:
             return
