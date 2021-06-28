@@ -14,7 +14,7 @@ class Commands(commands.Cog, name="Commands"):
 
     @commands.Cog.listener()
     
-    async def on_guild_join(self, ctx, guild):
+    async def on_guild_join(self, ctx:commands.Context,guild):
         general = find(lambda x: x.name == 'general',  guild.text_channels)
         if not general:
             return
