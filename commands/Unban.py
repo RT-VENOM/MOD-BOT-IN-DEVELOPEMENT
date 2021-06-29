@@ -40,7 +40,7 @@ class Commands(commands.Cog, name="Commands"):
         ) 
         await ctx.send(embed = embed8)
         embed_conf = discord.Embed(
-            description = f"""do you really want to unban the user if yes, message yes and if no, message no""",
+            description = f"""**Confirm yes/no**""",
             color = 0xd89522
         )
         await ctx.send(embed = embed_conf)
