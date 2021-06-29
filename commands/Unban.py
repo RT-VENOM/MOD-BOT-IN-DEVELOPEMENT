@@ -40,7 +40,7 @@ class Commands(commands.Cog, name="Commands"):
         ) 
         await ctx.send(embed = embed8)
         embed_conf = discord.Embed(
-            description = f"""**Confirm yes/no**""",
+            description = f"""**Confirm yes/no in 30 seconds else it will be cancelled**""",
             color = 0xd89522
         )
         await ctx.send(embed = embed_conf)
