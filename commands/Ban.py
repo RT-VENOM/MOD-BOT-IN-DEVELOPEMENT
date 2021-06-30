@@ -83,13 +83,7 @@ class Commands(commands.Cog, name="Commands"):
        
             await ctx.send(embed = embed)
             return
-        if isinstance(member, discord.Member):
-            if member.top_role >= ctx.author.top_role:
-                role = await ctx.send("`You cannot ban a member with higher role or permissions than you.`")
-                await ctx.message.delete()
-                await asyncio.sleep(4)
-                await role.delete()
-                return
+        
         if isinstance(error, commands.MissingPermissions):
             await ctx.message.add_reaction('❌')    
             embed=discord.Embed(
