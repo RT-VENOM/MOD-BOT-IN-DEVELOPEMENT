@@ -12,7 +12,7 @@ class Invitation(commands.Cog, name="Invitation"):
     """
     def __init__(self, bot):
         self.bot = bot
-    @commands.command(aliases = ['ss'], brief = "[Support server invitation]", description = "Upon the usage of this command `Mod Bot` will dm you with the invitation link of its support server")
+    @commands.command(aliases = ['ss'], brief = '[Support server invitation]', description = 'Upon the usage of this command `Mod Bot` will dm you with the invitation link of its support server')
     async def supportserver(self, ctx):
         embed=discord.Embed(
             title="**======== *SUPPORT SERVER!* ========**",
