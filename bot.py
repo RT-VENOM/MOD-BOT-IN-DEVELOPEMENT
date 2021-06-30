@@ -53,6 +53,21 @@ async def on_guild_join(guild):
 async def on_guild_remove(guild):
     await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name=f'{len(client.guilds)} servers | ?help'))
 
+@client.event
+async def on_message(message):
+    if client.user.mentioned_in(message):
+
+        embed=discord.Embed(title=f"""**Hello {ctx.author.mention} my prefix is `?`**""")
+   
+        var2 = await ctx.send(embed=embed)
+
+        await client.process_commands(message)
+        await asyncio.sleep(5)
+        await ctx.message.delete()
+        await var2.delete()
+    else:
+        return
+
 
 
 
