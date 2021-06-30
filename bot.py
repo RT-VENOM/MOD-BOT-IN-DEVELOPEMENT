@@ -57,14 +57,12 @@ async def on_guild_remove(guild):
 async def on_message(message):
     if client.user.mentioned_in(message):
 
-        embed=discord.Embed(title=f"""**Hello {ctx.author.mention} my prefix is `?`**""")
+        embed=discord.Embed(title=f"""**Hello! my prefix is `?`**""",
+        color = 0x3c1361)
    
-        var2 = await ctx.send(embed=embed)
+        var2 = await message.channel.send(embed=embed)
 
         await client.process_commands(message)
-        await asyncio.sleep(5)
-        await ctx.message.delete()
-        await var2.delete()
     else:
         return
 
