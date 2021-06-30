@@ -13,7 +13,7 @@ class Invitation(commands.Cog, name="Invitation"):
     def __init__(self, bot):
         self.bot = bot
     @commands.command(aliases = ['ss'])
-    async def supportserver(ctx):
+    async def supportserver(self, ctx):
         embed=discord.Embed(
             title="**======== *SUPPORT SERVER!* ========**",
             description=f"""Click on **[Support server!](https://discord.gg/4DSZ4skNgp)** to join the official `MOD BOT` support server.
