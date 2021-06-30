@@ -57,8 +57,8 @@ async def on_guild_remove(guild):
 async def on_message(message):
     if client.user.mentioned_in(message):
 
-        embed=discord.Embed(title=f"""**Hello! my prefix is `?`**""",
-        color = 0x3c1361)
+        embed=discord.Embed(title=f"""Hello! my prefix is `?`""",
+        color = 0x80c904)
    
         var2 = await message.channel.send(embed=embed)
 
