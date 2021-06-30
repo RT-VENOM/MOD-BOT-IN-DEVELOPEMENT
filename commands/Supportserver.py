@@ -12,7 +12,7 @@ class Invitation(commands.Cog, name="Invitation"):
     """
     def __init__(self, bot):
         self.bot = bot
-    @commands.command()
+    @commands.command(aliases = ['ss'])
     async def supportserver(ctx):
         embed=discord.Embed(
             title="**======== *SUPPORT SERVER!* ========**",
