@@ -28,6 +28,8 @@ class Invitation(commands.Cog, name="Invitation"):
         embed.set_author(name = "MOD BOT", url='https://www.youtube.com/channel/UCt0g05Q4JTm1a5mxGj7JPQQ', icon_url= 'https://cdn.discordapp.com/attachments/845324641521107004/845391299196747796/3dgifmaker81594_1.gif')
         embed.set_image(url= 'https://media.discordapp.net/attachments/854545082634862622/854931871291670528/download_6_Fotor.jpg')
         await ctx.author.send(embed=embed)
+        await asyncio.sleep(5)
+        await ctx.message.delete()
     
 
 
