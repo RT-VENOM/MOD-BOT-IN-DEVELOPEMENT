@@ -40,18 +40,6 @@ async def on_guild_join(guild):
 async def on_guild_remove(guild):
     await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name=f'{len(client.guilds)} servers | ?help'))
 
-@client.event
-async def on_message(message):
-    if client.user.mentioned_in(message):
-
-        embed=discord.Embed(title=f"""Hello! my prefix is `?`""",
-        color = 0x80c904)
-   
-        var2 = await message.channel.send(embed=embed)
-
-        await client.process_commands(message)
-    else:
-        return
 
 
 
