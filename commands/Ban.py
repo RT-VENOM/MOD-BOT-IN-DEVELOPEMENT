@@ -20,7 +20,7 @@ class Commands(commands.Cog, name="Commands"):
     @commands.has_permissions(ban_members= True )
     async def ban(self, ctx, member: discord.Member, *, reason = None):
     
-        if member == None or member == ctx.message.author:
+        if member == ctx.message.author:
             await ctx.message.add_reaction('❌')
             embed = discord.Embed(
                 title = "**BAN COMMAND EXECUTION FAILED**",
@@ -35,9 +35,9 @@ class Commands(commands.Cog, name="Commands"):
             await ctx.message.delete()
             await embed_variable.delete()
             return
-        if reason == None:
+        elif reason == None:
             reason = "no reason applied"
-        if member.bot:
+        elif member.bot:
             await ctx.message.add_reaction('❌')
             embed = discord.Embed(
                 title = "**BAN COMMAND EXECUTION FAILED**",
@@ -84,7 +84,7 @@ class Commands(commands.Cog, name="Commands"):
             await ctx.send(embed = embed)
             return
         
-        if isinstance(error, commands.MissingPermissions):
+        elif isinstance(error, commands.MissingPermissions):
             await ctx.message.add_reaction('❌')    
             embed=discord.Embed(
             title="**MODERATION COMMAND EXECUTION CANCELLED**",
@@ -98,6 +98,15 @@ class Commands(commands.Cog, name="Commands"):
             await ctx.message.delete()
             await error.delete()
             return
+        elif isinstance(error, commands.MissingRequiredArgument):
+            await ctx.message.add_reaction('❌')
+            embed9=discord.Embed(
+            description=f"""You must mention a user to ban.\n**Executed by **{ ctx.author.mention }""",
+            color=0xd89522)
+            error9 = await ctx.send(embed = embed9)
+            await asyncio.sleep(10)
+            await ctx.message.delete()
+            await error9.delete()
 
 
 def setup(bot):
