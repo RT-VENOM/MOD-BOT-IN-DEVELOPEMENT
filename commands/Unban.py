@@ -93,7 +93,7 @@ class Commands(commands.Cog, name="Commands"):
        
             await ctx.send(embed = embed)
             return
-        if isinstance(error, commands.MissingPermissions):
+        elif isinstance(error, commands.MissingPermissions):
             await ctx.message.add_reaction('❌')    
             embed=discord.Embed(
             title="**MODERATION COMMAND EXECUTION CANCELLED**",
