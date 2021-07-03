@@ -61,7 +61,7 @@ class Commands(commands.Cog, name="Commands"):
         await member.ban(reason= reason)
         embed=discord.Embed(
             title="**MODERATION COMMAND**",
-            description=f"""{member.mention}  is banned from the server by  { ctx.author.mention }\nreason: {reason}\nExecuted by {ctx.author.mention}""",
+            description=f"""{member.mention}  is banned from the server by  { ctx.author.mention }\n**reason: {reason}**\n**Executed by **{ctx.author.mention}""",
             color= 0x80c904)
         embed.set_thumbnail(url = 'https://media.discordapp.net/attachments/841947091659653162/854969004699156480/output-onlinegiftools.gif')
         embed.set_author(name = "BAN COMMAND EXECUTED", icon_url= "https://media.discordapp.net/attachments/841947091659653162/854969004699156480/output-onlinegiftools.gif")
