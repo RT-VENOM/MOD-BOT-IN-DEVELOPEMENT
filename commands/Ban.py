@@ -22,7 +22,7 @@ class Commands(commands.Cog, name="Commands"):
         print("hello")
         
         if member == ctx.message.author:
-            await ctx.message.add_reaction('❌')
+            
             embed = discord.Embed(
                 title = "**BAN COMMAND EXECUTION FAILED**",
                 description = f"""**BAN COMMAND EXECUTION WAS CANCELLED BECAUSE THE USER YOU MENTIONED IS YOUR ID.\nExecuted by { ctx.author.mention }**""",
@@ -60,7 +60,7 @@ class Commands(commands.Cog, name="Commands"):
         elif reason == None:
             reason = "no reason applied"
         elif member.bot:
-            await ctx.message.add_reaction('❌')
+            
             embed = discord.Embed(
                 title = "**BAN COMMAND EXECUTION FAILED**",
                 description = f"""**BAN COMMAND WAS CANCELLED BECAUSE THE MEMBER YOU MENTION IS A BOT.
@@ -94,7 +94,7 @@ class Commands(commands.Cog, name="Commands"):
     @ban.error
     async def on_command_error(self, ctx, error):
         if isinstance(ctx.channel, discord.channel.DMChannel):
-            await ctx.message.add_reaction('❌')
+            
             embed = discord.Embed(
                 title = "**BAN COMMAND EXECUTION FAILED**",
                 description = f"""**BAN COMMAND CANNOT BE USED IN A DM CONVERSATION.\nExecuted by { ctx.author.mention }**""",
@@ -105,7 +105,7 @@ class Commands(commands.Cog, name="Commands"):
             await ctx.send(embed = embed)
             return
         elif isinstance(error, commands.MissingPermissions):
-            await ctx.message.add_reaction('❌')    
+            
             embed=discord.Embed(
             title="**MODERATION COMMAND EXECUTION CANCELLED**",
             description=f"""You don't have permission to use the ban command.\nExecuted by { ctx.author.mention }""",
@@ -118,7 +118,7 @@ class Commands(commands.Cog, name="Commands"):
             await error.delete()
             return
         elif isinstance(error, commands.MissingRequiredArgument):
-            await ctx.message.add_reaction('❌')
+         
             embed9=discord.Embed(
             description=f"""You must mention a user to ban.\n**Executed by **{ ctx.author.mention }""",
             color=0xd89522)
