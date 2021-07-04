@@ -67,13 +67,8 @@ class Commands(commands.Cog, name="Commands"):
             )
             await ctx.send(embed = dgh3, delete_after = 5)
             return
-        elif member.permissions.administrator == True:
-            dgh5 = discord.Embed(
-                description = f"""The user you menitoned is a administrator\n**Executed by** {ctx.author.mention}\nTried to ban: {member.mention}""",
-                color = discord.Color.green()
-            )
-            await ctx.send(embed = dgh5, delete_after = 5)
-            return
+ 
+    
         elif reason == None:
             reason = "no reason applied"
         elif member.bot:
