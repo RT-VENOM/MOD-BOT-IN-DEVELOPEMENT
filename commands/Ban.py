@@ -72,33 +72,19 @@ class Commands(commands.Cog, name="Commands"):
         elif reason == None:
             reason = "no reason applied"
         elif member.bot:
-            try:
-                await ctx.message.add_reaction('❌')
-                embed = discord.Embed(
-                    title = "**BAN COMMAND EXECUTION FAILED**",
-                    description = f"""**BAN COMMAND WAS CANCELLED BECAUSE THE MEMBER YOU MENTION IS A BOT.\nExecuted by { ctx.author.mention }**""",
-                    color=ctx.author.color
+            embed = discord.Embed(
+                title = "**BAN COMMAND EXECUTION FAILED**",
+                description = f"""**BAN COMMAND WAS CANCELLED BECAUSE THE MEMBER YOU MENTION IS A BOT.\nExecuted by { ctx.author.mention }**""",
+                color= discord.Color.red()
                 )
-                embed.set_footer(text= f"The command was used by {ctx.author.mention}")
-
-                embed_variabl = await ctx.send(embed = embed)
-                await asyncio.sleep(10)
-                await ctx.message.delete()
-                await embed_variabl.delete()
-                return
-            except:
-                embed = discord.Embed(
-                    title = "**BAN COMMAND EXECUTION FAILED**",
-                    description = f"""**BAN COMMAND WAS CANCELLED BECAUSE THE MEMBER YOU MENTION IS A BOT.\nExecuted by { ctx.author.mention }**""",
-                    color=ctx.author.color
-                )
-                embed.set_footer(text= f"The command was used by {ctx.author.mention}")
-
-                embed_variabl = await ctx.send(embed = embed)
-                await asyncio.sleep(10)
-                await ctx.message.delete()
-                await embed_variabl.delete()
-                return
+            embed.set_footer(text= f"The command was used by {ctx.author.mention}")
+            embed_variabl = await ctx.send(embed = embed)
+            await asyncio.sleep(10)
+            await ctx.message.delete()
+            await embed_variabl.delete()
+            return
+                
+           
         try:
             await ctx.message.add_reaction('✅')
             embedfordm=discord.Embed(
