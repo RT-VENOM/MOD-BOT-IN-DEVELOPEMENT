@@ -53,6 +53,7 @@ class Commands(commands.Cog, name="Commands"):
         elif reason == None:
             reason = "no reason applied"
         elif member.bot:
+            print("bot ban")
             embed20072007 = discord.Embed(
                 title = "**BAN COMMAND EXECUTION FAILED**",
                 description = f"""**BAN COMMAND WAS CANCELLED BECAUSE THE MEMBER YOU MENTION IS A BOT.\nExecuted by { ctx.author.mention }**""",
@@ -85,6 +86,7 @@ class Commands(commands.Cog, name="Commands"):
         
            
         try:
+            print("ban try")
             await ctx.message.add_reaction('✅')
             embedfordm=discord.Embed(
                 title="**BAN NOTICE**",
@@ -100,6 +102,7 @@ class Commands(commands.Cog, name="Commands"):
             embed.set_author(name = "BAN COMMAND EXECUTED", icon_url= "https://media.discordapp.net/attachments/841947091659653162/854969004699156480/output-onlinegiftools.gif")
             await ctx.send(embed = embed)
         except:
+            print("ban except")
             embedfordm=discord.Embed(
                 title="**BAN NOTICE**",
                 description=f"""{ member.mention } you are banned from { ctx.guild.name } by { ctx.author.mention } due to some unavoidable reasons which were created due to your activity in the server which are breaking the rules of { ctx.guild.name }.""",
