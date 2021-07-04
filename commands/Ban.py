@@ -201,6 +201,26 @@ class Commands(commands.Cog, name="Commands"):
                 await ctx.message.delete()
                 await error9.delete()
                 return
+        elif isinstance(error, commands.MissingRequiredArgument):
+            try:
+                await ctx.message.add_reaction('❌')
+                embed9=discord.Embed(
+                description=f"""You must mention someone to ban.\n**Executed by **{ ctx.author.mention }""",
+                color= discord.Color.red())
+                error9 = await ctx.send(embed = embed9)
+                await asyncio.sleep(10)
+                await ctx.message.delete()
+                await error9.delete()
+                return
+            except:
+                embed9=discord.Embed(
+                description=f"""You must mention someone to ban.\n**Executed by **{ ctx.author.mention }""",
+                color= discord.Color.red())
+                error9 = await ctx.send(embed = embed9)
+                await asyncio.sleep(10)
+                await ctx.message.delete()
+                await error9.delete()
+                return
         
 
 def setup(bot):
