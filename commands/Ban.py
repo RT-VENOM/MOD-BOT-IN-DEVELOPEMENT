@@ -26,8 +26,7 @@ class Commands(commands.Cog, name="Commands"):
                 await ctx.message.add_reaction('❌')
                 embed = discord.Embed(
                     title = "**BAN COMMAND EXECUTION FAILED**",
-                    description = f"""**BAN COMMAND EXECUTION WAS CANCELLED BECAUSE THE USER YOU MENTIONED IS YOUR ID.
-        Executed by { ctx.author.mention }**""",
+                    description = f"""**BAN COMMAND EXECUTION WAS CANCELLED BECAUSE THE USER YOU MENTIONED IS YOUR ID.\nExecuted by { ctx.author.mention }**""",
                 color=ctx.author.color
                 )
                 embed.set_footer(text= f"The command was used by {ctx.author.mention}")
@@ -40,8 +39,7 @@ class Commands(commands.Cog, name="Commands"):
             except:
                 embed = discord.Embed(
                     title = "**BAN COMMAND EXECUTION FAILED**",
-                    description = f"""**BAN COMMAND EXECUTION WAS CANCELLED BECAUSE THE USER YOU MENTIONED IS YOUR ID.
-        Executed by { ctx.author.mention }**""",
+                    description = f"""**BAN COMMAND EXECUTION WAS CANCELLED BECAUSE THE USER YOU MENTIONED IS YOUR ID.\nExecuted by { ctx.author.mention }**""",
                 color=ctx.author.color
                 )
                 embed.set_footer(text= f"The command was used by {ctx.author.mention}")
