@@ -22,20 +22,36 @@ class Commands(commands.Cog, name="Commands"):
         print("hello")
         
         if member == ctx.message.author:
-            await ctx.message.add_reaction('❌')
-            embed = discord.Embed(
-                title = "**BAN COMMAND EXECUTION FAILED**",
-                description = f"""**BAN COMMAND EXECUTION WAS CANCELLED BECAUSE THE USER YOU MENTIONED IS YOUR ID.
-    Executed by { ctx.author.mention }**""",
-            color=ctx.author.color
-            )
-            embed.set_footer(text= f"The command was used by {ctx.author.mention}")
-       
-            embed_variable = await ctx.send(embed = embed)
-            await asyncio.sleep(10)
-            await ctx.message.delete()
-            await embed_variable.delete()
-            return
+            try:
+                await ctx.message.add_reaction('❌')
+                embed = discord.Embed(
+                    title = "**BAN COMMAND EXECUTION FAILED**",
+                    description = f"""**BAN COMMAND EXECUTION WAS CANCELLED BECAUSE THE USER YOU MENTIONED IS YOUR ID.
+        Executed by { ctx.author.mention }**""",
+                color=ctx.author.color
+                )
+                embed.set_footer(text= f"The command was used by {ctx.author.mention}")
+
+                embed_variable = await ctx.send(embed = embed)
+                await asyncio.sleep(10)
+                await ctx.message.delete()
+                await embed_variable.delete()
+                return
+            except:
+                embed = discord.Embed(
+                    title = "**BAN COMMAND EXECUTION FAILED**",
+                    description = f"""**BAN COMMAND EXECUTION WAS CANCELLED BECAUSE THE USER YOU MENTIONED IS YOUR ID.
+        Executed by { ctx.author.mention }**""",
+                color=ctx.author.color
+                )
+                embed.set_footer(text= f"The command was used by {ctx.author.mention}")
+
+                embed_variable = await ctx.send(embed = embed)
+                await asyncio.sleep(10)
+                await ctx.message.delete()
+                await embed_variable.delete()
+                return
+
 
         elif ctx.author.top_role.position < member.top_role.position:
             dgh4 = discord.Embed(
@@ -61,34 +77,62 @@ class Commands(commands.Cog, name="Commands"):
         elif reason == None:
             reason = "no reason applied"
         elif member.bot:
-            await ctx.message.add_reaction('❌')
-            embed = discord.Embed(
-                title = "**BAN COMMAND EXECUTION FAILED**",
-                description = f"""**BAN COMMAND WAS CANCELLED BECAUSE THE MEMBER YOU MENTION IS A BOT.\nExecuted by { ctx.author.mention }**""",
-                color=ctx.author.color
-            )
-            embed.set_footer(text= f"The command was used by {ctx.author.mention}")
+            try:
+                await ctx.message.add_reaction('❌')
+                embed = discord.Embed(
+                    title = "**BAN COMMAND EXECUTION FAILED**",
+                    description = f"""**BAN COMMAND WAS CANCELLED BECAUSE THE MEMBER YOU MENTION IS A BOT.\nExecuted by { ctx.author.mention }**""",
+                    color=ctx.author.color
+                )
+                embed.set_footer(text= f"The command was used by {ctx.author.mention}")
 
-            embed_variabl = await ctx.send(embed = embed)
-            await asyncio.sleep(10)
-            await ctx.message.delete()
-            await embed_variabl.delete()
-            return
-    
-        await ctx.message.add_reaction('✅')
-        embedfordm=discord.Embed(
-            title="**BAN NOTICE**",
-            description=f"""{ member.mention } you are banned from { ctx.guild.name } by { ctx.author.mention } due to some unavoidable reasons which were created due to your activity in the server which are breaking the rules of { ctx.guild.name }.""",
-            color=0xd89522)
-        await member.send(embed = embedfordm)
-        await member.ban(reason= reason)
-        embed=discord.Embed(
-            title="**MODERATION COMMAND**",
-            description=f"""{member.mention}  is banned from the server by  { ctx.author.mention }\n**Reason : {reason}**\n**Executed by: {ctx.author.mention}**\nBanned user: {member.mention}""",
-            color= discord.Color.green())
-        embed.set_thumbnail(url = 'https://media.discordapp.net/attachments/841947091659653162/854969004699156480/output-onlinegiftools.gif')
-        embed.set_author(name = "BAN COMMAND EXECUTED", icon_url= "https://media.discordapp.net/attachments/841947091659653162/854969004699156480/output-onlinegiftools.gif")
-        await ctx.send(embed = embed)
+                embed_variabl = await ctx.send(embed = embed)
+                await asyncio.sleep(10)
+                await ctx.message.delete()
+                await embed_variabl.delete()
+                return
+            except:
+                embed = discord.Embed(
+                    title = "**BAN COMMAND EXECUTION FAILED**",
+                    description = f"""**BAN COMMAND WAS CANCELLED BECAUSE THE MEMBER YOU MENTION IS A BOT.\nExecuted by { ctx.author.mention }**""",
+                    color=ctx.author.color
+                )
+                embed.set_footer(text= f"The command was used by {ctx.author.mention}")
+
+                embed_variabl = await ctx.send(embed = embed)
+                await asyncio.sleep(10)
+                await ctx.message.delete()
+                await embed_variabl.delete()
+                return
+        try:
+            await ctx.message.add_reaction('✅')
+            embedfordm=discord.Embed(
+                title="**BAN NOTICE**",
+                description=f"""{ member.mention } you are banned from { ctx.guild.name } by { ctx.author.mention } due to some unavoidable reasons which were created due to your activity in the server which are breaking the rules of { ctx.guild.name }.""",
+                color=0xd89522)
+            await member.send(embed = embedfordm)
+            await member.ban(reason= reason)
+            embed=discord.Embed(
+                title="**MODERATION COMMAND**",
+                description=f"""{member.mention}  is banned from the server by  { ctx.author.mention }\n**Reason : {reason}**\n**Executed by: {ctx.author.mention}**\nBanned user: {member.mention}""",
+                color= discord.Color.green())
+            embed.set_thumbnail(url = 'https://media.discordapp.net/attachments/841947091659653162/854969004699156480/output-onlinegiftools.gif')
+            embed.set_author(name = "BAN COMMAND EXECUTED", icon_url= "https://media.discordapp.net/attachments/841947091659653162/854969004699156480/output-onlinegiftools.gif")
+            await ctx.send(embed = embed)
+        except:
+            embedfordm=discord.Embed(
+                title="**BAN NOTICE**",
+                description=f"""{ member.mention } you are banned from { ctx.guild.name } by { ctx.author.mention } due to some unavoidable reasons which were created due to your activity in the server which are breaking the rules of { ctx.guild.name }.""",
+                color=0xd89522)
+            await member.send(embed = embedfordm)
+            await member.ban(reason= reason)
+            embed=discord.Embed(
+                title="**MODERATION COMMAND**",
+                description=f"""{member.mention}  is banned from the server by  { ctx.author.mention }\n**Reason : {reason}**\n**Executed by: {ctx.author.mention}**\nBanned user: {member.mention}""",
+                color= discord.Color.green())
+            embed.set_thumbnail(url = 'https://media.discordapp.net/attachments/841947091659653162/854969004699156480/output-onlinegiftools.gif')
+            embed.set_author(name = "BAN COMMAND EXECUTED", icon_url= "https://media.discordapp.net/attachments/841947091659653162/854969004699156480/output-onlinegiftools.gif")
+            await ctx.send(embed = embed)
     
     
     @ban.error
