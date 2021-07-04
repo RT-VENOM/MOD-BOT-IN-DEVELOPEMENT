@@ -147,7 +147,7 @@ class Commands(commands.Cog, name="Commands"):
                 embed=discord.Embed(
                 title="**MODERATION COMMAND EXECUTION CANCELLED**",
                 description=f"""You don't have permission to use the ban command.\nExecuted by { ctx.author.mention }""",
-                color=ctx.author.color)
+                color=discord.Color.red())
                 embed.set_thumbnail(url = 'https://media.discordapp.net/attachments/841947091659653162/854969004699156480/output-onlinegiftools.gif')
                 error = await ctx.send(embed = embed)
                 await ctx.author.send(f'{ ctx.author.mention } you dont have permission to ban anyone in { ctx.guild.name }')
@@ -159,7 +159,7 @@ class Commands(commands.Cog, name="Commands"):
                 embed4353534=discord.Embed(
                 title="**MODERATION COMMAND EXECUTION CANCELLED**",
                 description=f"""You don't have permission to use the ban command.\nExecuted by { ctx.author.mention }""",
-                color=ctx.author.color)
+                color=discord.Color.red())
                 embed.set_thumbnail(url = 'https://media.discordapp.net/attachments/841947091659653162/854969004699156480/output-onlinegiftools.gif')
                 error = await ctx.send(embed = embed4353534)
                 await ctx.author.send(f'{ ctx.author.mention } you dont have permission to ban anyone in { ctx.guild.name }')
@@ -172,7 +172,7 @@ class Commands(commands.Cog, name="Commands"):
                 await ctx.message.add_reaction('❌')
                 embed9=discord.Embed(
                 description=f"""You must mention a user to ban.\n**Executed by **{ ctx.author.mention }""",
-                color=0xd89522)
+                color=discord.Color.red())
                 error9 = await ctx.send(embed = embed9)
                 await asyncio.sleep(10)
                 await ctx.message.delete()
@@ -181,7 +181,7 @@ class Commands(commands.Cog, name="Commands"):
             except:
                 embed9=discord.Embed(
                 description=f"""You must mention a user to ban.\n**Executed by **{ ctx.author.mention }""",
-                color=0xd89522)
+                color=discord.Color.red())
                 error9 = await ctx.send(embed = embed9)
                 await asyncio.sleep(10)
                 await ctx.message.delete()
