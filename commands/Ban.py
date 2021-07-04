@@ -55,13 +55,13 @@ class Commands(commands.Cog, name="Commands"):
         elif reason == None:
             reason = "no reason applied"
         elif member.bot:
-            embed = discord.Embed(
+            embed20072007 = discord.Embed(
                 title = "**BAN COMMAND EXECUTION FAILED**",
                 description = f"""**BAN COMMAND WAS CANCELLED BECAUSE THE MEMBER YOU MENTION IS A BOT.\nExecuted by { ctx.author.mention }**""",
                 color= discord.Color.red()
                 )
             embed.set_footer(text= f"The command was used by {ctx.author.mention}")
-            embed_variabl = await ctx.send(embed = embed)
+            embed_variabl = await ctx.send(embed = embed20072007)
             await asyncio.sleep(10)
             await ctx.message.delete()
             await embed_variabl.delete()
