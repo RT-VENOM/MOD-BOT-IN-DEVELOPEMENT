@@ -6,6 +6,7 @@ from discord import message
 from discord.ext import commands
 from discord import utils
 from discord.ext.commands.errors import BadArgument
+from discord.ext.commands.cooldowns import BucketType
 
 
 
@@ -25,6 +26,7 @@ class Commands(commands.Cog, name="Commands"):
 
     @commands.command(aliases = ['unb'], brief = "[Used to unban a member]")
     @commands.has_permissions(ban_members= True)
+    @commands.cooldown(rate=1, per=60)
     async def unban(self, ctx, id: int):
         try:
             await ctx.message.add_reaction('✅')
@@ -213,6 +215,11 @@ class Commands(commands.Cog, name="Commands"):
                 await ctx.message.delete()
                 await error9999.delete()
                 return
+            
+        elif isinstance(error, commands.CommandOnCooldown):
+            await ctx.send(f"This command is on cooldown, try again after {round(error.retry_after)} seconds.", delete_after=5)
+            print(error)
+            return
 
 
 
