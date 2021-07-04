@@ -19,7 +19,7 @@ class Commands(commands.Cog, name="Commands"):
     @commands.command(aliases = ['b'], brief = '[Used to ban a member]', description = 'This command can be only executed when the bots role is above than the role of the members you want to ban, this bot cannot ban any bot as well as cannot ban any administrator, this bot requires send, add reaction, embed, attachment permission etc. When the command will be successful executed it will send a message in the channel where the command was executed but if the command is inappropriate like trying to ban a bot it will send a message telling you that you cannot ban a bot and it will delete both the command and the error message given by bot after 10 seconds of the execution of command.')
     @commands.has_permissions(ban_members= True )
     async def ban(self, ctx, member: discord.Member, *, reason = None):
-        print("hello")
+        print("ban command")
         
         if member == ctx.message.author:
             try:
