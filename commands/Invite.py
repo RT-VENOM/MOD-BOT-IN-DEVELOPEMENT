@@ -20,7 +20,7 @@ class Invitation(commands.Cog, name="Invitation"):
             title="**======== *WANNA ADD ME IN YOUR SERVER!* ========**",
             description=f"""Do you liked using { self.bot.user.mention } and wanna add `MOD BOT` in your server
                 
-        Then click on **[Invite me!](https://discord.com/api/oauth2/authorize?client_id=853890206570119188&permissions=4294967287&scope=bot)** to add `MOD BOT` in your server.
+        Then click on **[Invite me!](https://discord.com/api/oauth2/authorize?client_id=831208296018083890&permissions=8&scope=bot)** to add `MOD BOT` in your server.
                 """,
             color= 0xd89522)
         embed.set_footer(text = "ENJOY USING ME IN YOUR SERVER")
