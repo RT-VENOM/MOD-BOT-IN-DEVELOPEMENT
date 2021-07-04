@@ -26,7 +26,7 @@ class Commands(commands.Cog, name="Commands"):
 
     @commands.command(aliases = ['unb'], brief = "[Used to unban a member]")
     @commands.has_permissions(ban_members= True)
-    @commands.cooldown(rate=1, per=60, type=<BucketType.guild: 0>)
+    @commands.cooldown(rate=1, per=60, commands.BucketType.guild)
     async def unban(self, ctx, id: int):
         try:
             await ctx.message.add_reaction('✅')
