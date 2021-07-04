@@ -64,8 +64,7 @@ class Commands(commands.Cog, name="Commands"):
             await ctx.message.add_reaction('❌')
             embed = discord.Embed(
                 title = "**BAN COMMAND EXECUTION FAILED**",
-                description = f"""**BAN COMMAND WAS CANCELLED BECAUSE THE MEMBER YOU MENTION IS A BOT.
-    Executed by { ctx.author.mention }**""",
+                description = f"""**BAN COMMAND WAS CANCELLED BECAUSE THE MEMBER YOU MENTION IS A BOT.\nExecuted by { ctx.author.mention }**""",
                 color=ctx.author.color
             )
             embed.set_footer(text= f"The command was used by {ctx.author.mention}")
@@ -85,8 +84,8 @@ class Commands(commands.Cog, name="Commands"):
         await member.ban(reason= reason)
         embed=discord.Embed(
             title="**MODERATION COMMAND**",
-            description=f"""{member.mention}  is banned from the server by  { ctx.author.mention }""",
-            color=ctx.author.color)
+            description=f"""{member.mention}  is banned from the server by  { ctx.author.mention }\n**Reason : {reason}**\n**Executed by: {ctx.author.mention}**\nBanned user: {member.mention}""",
+            color= discord.Color.green())
         embed.set_thumbnail(url = 'https://media.discordapp.net/attachments/841947091659653162/854969004699156480/output-onlinegiftools.gif')
         embed.set_author(name = "BAN COMMAND EXECUTED", icon_url= "https://media.discordapp.net/attachments/841947091659653162/854969004699156480/output-onlinegiftools.gif")
         await ctx.send(embed = embed)
