@@ -52,7 +52,7 @@ class Commands(commands.Cog, name="Commands"):
 
         elif reason == None:
             reason = "no reason applied"
-        elif member.bot:
+        if member.bot:
             print("bot ban")
             embed20072007 = discord.Embed(
                 title = "**BAN COMMAND EXECUTION FAILED**",
