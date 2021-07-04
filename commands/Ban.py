@@ -50,7 +50,7 @@ class Commands(commands.Cog, name="Commands"):
                 await embed_variable.delete()
                 return
 
-        elif reason == None:
+        if reason == None:
             reason = "no reason applied"
         if member.bot:
             print("bot ban")
@@ -67,14 +67,14 @@ class Commands(commands.Cog, name="Commands"):
             return
         
         
-        elif ctx.author.top_role.position < member.top_role.position:
+        if ctx.author.top_role.position < member.top_role.position:
             dgh4 = discord.Embed(
                 description = f"""The user you menitoned has a higher role than you\n**Executed by** {ctx.author.mention}\n Tried to ban: {member.mention}""",
                 color = discord.Color.green()
             )
             await ctx.send(embed = dgh4, delete_after = 5)
             return
-        elif ctx.me.top_role.position < member.top_role.position:
+        if ctx.me.top_role.position < member.top_role.position:
             dgh3 = discord.Embed(
                 description = f"""The user you menitoned has a higher role than me\n**Executed by** {ctx.author.mention}""",
                 color = discord.Color.green()
