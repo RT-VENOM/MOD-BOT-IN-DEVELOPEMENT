@@ -52,7 +52,22 @@ class Commands(commands.Cog, name="Commands"):
                 await embed_variable.delete()
                 return
 
-
+        elif reason == None:
+            reason = "no reason applied"
+        elif member.bot:
+            embed = discord.Embed(
+                title = "**BAN COMMAND EXECUTION FAILED**",
+                description = f"""**BAN COMMAND WAS CANCELLED BECAUSE THE MEMBER YOU MENTION IS A BOT.\nExecuted by { ctx.author.mention }**""",
+                color= discord.Color.red()
+                )
+            embed.set_footer(text= f"The command was used by {ctx.author.mention}")
+            embed_variabl = await ctx.send(embed = embed)
+            await asyncio.sleep(10)
+            await ctx.message.delete()
+            await embed_variabl.delete()
+            return
+        
+        
         elif ctx.author.top_role.position < member.top_role.position:
             dgh4 = discord.Embed(
                 description = f"""The user you menitoned has a higher role than you\n**Executed by** {ctx.author.mention}\n Tried to ban: {member.mention}""",
@@ -69,21 +84,7 @@ class Commands(commands.Cog, name="Commands"):
             return
  
     
-        elif reason == None:
-            reason = "no reason applied"
-        elif member.bot:
-            embed = discord.Embed(
-                title = "**BAN COMMAND EXECUTION FAILED**",
-                description = f"""**BAN COMMAND WAS CANCELLED BECAUSE THE MEMBER YOU MENTION IS A BOT.\nExecuted by { ctx.author.mention }**""",
-                color= discord.Color.red()
-                )
-            embed.set_footer(text= f"The command was used by {ctx.author.mention}")
-            embed_variabl = await ctx.send(embed = embed)
-            await asyncio.sleep(10)
-            await ctx.message.delete()
-            await embed_variabl.delete()
-            return
-                
+        
            
         try:
             await ctx.message.add_reaction('✅')
