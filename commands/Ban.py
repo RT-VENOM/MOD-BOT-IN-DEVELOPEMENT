@@ -24,8 +24,7 @@ class Commands(commands.Cog, name="Commands"):
             await ctx.message.add_reaction('❌')
             embed = discord.Embed(
                 title = "**BAN COMMAND EXECUTION FAILED**",
-                description = f"""**BAN COMMAND EXECUTION WAS CANCELLED BECAUSE THE USER YOU MENTIONED IS EITHER A USER WHO IS NOT A MEMBER OF THIS SERVER OR THIS IS YOUR ID.
-    Executed by { ctx.author.mention }**""",
+                description = f"""**BAN COMMAND EXECUTION WAS CANCELLED BECAUSE THE USER YOU MENTIONED IS EITHER A USER WHO IS NOT A MEMBER OF THIS SERVER OR THIS IS YOUR ID.\nExecuted by { ctx.author.mention }**""",
             color=0xff0000
             )
             embed.set_footer(text= f"The command was used by {ctx.author.mention}")
@@ -34,6 +33,27 @@ class Commands(commands.Cog, name="Commands"):
             await asyncio.sleep(10)
             await ctx.message.delete()
             await embed_variable.delete()
+            return
+        elif ctx.author.top_role.position < member.top_role.position:
+            dgh4 = discord.Embed(
+                description = f"""The user you menitoned has a higher role than you\n**Executed by** {ctx.author.mention}\n Tried to ban: {member.mention}""",
+                color = discord.Color.green()
+            )
+            await ctx.send(embed = dgh4, delete_after = 5)
+            return
+        elif ctx.me.top_role.position < member.top_role.position:
+            dgh3 = discord.Embed(
+                description = f"""The user you menitoned has a higher role than me\n**Executed by** {ctx.author.mention}""",
+                color = discord.Color.green()
+            )
+            await ctx.send(embed = dgh3, delete_after = 5)
+            return
+        elif member.permissions.administrator == True:
+            dgh5 = discord.Embed(
+                description = f"""The user you menitoned is a administrator\n**Executed by** {ctx.author.mention}\nTried to ban: {member.mention}""",
+                color = discord.Color.green()
+            )
+            await ctx.send(embed = dgh5, delete_after = 5)
             return
         elif reason == None:
             reason = "no reason applied"
