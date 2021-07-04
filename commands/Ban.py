@@ -27,7 +27,7 @@ class Commands(commands.Cog, name="Commands"):
                 embed = discord.Embed(
                     title = "**BAN COMMAND EXECUTION FAILED**",
                     description = f"""**BAN COMMAND EXECUTION WAS CANCELLED BECAUSE THE USER YOU MENTIONED IS YOUR ID.\nExecuted by { ctx.author.mention }**""",
-                color=ctx.author.color
+                color=discord.Color.red()
                 )
                 embed.set_footer(text= f"The command was used by {ctx.author.mention}")
 
@@ -40,7 +40,7 @@ class Commands(commands.Cog, name="Commands"):
                 embed = discord.Embed(
                     title = "**BAN COMMAND EXECUTION FAILED**",
                     description = f"""**BAN COMMAND EXECUTION WAS CANCELLED BECAUSE THE USER YOU MENTIONED IS YOUR ID.\nExecuted by { ctx.author.mention }**""",
-                color=ctx.author.color
+                color=discord.Color.red()
                 )
                 embed.set_footer(text= f"The command was used by {ctx.author.mention}")
 
