@@ -82,7 +82,20 @@ class Commands(commands.Cog, name="Commands"):
             await ctx.send(embed = dgh3, delete_after = 5)
             return
  
-    
+        if ctx.me.top_role.position == member.top_role.position:
+            dgh2 = discord.Embed(
+                description = f"""The user you menitoned has the same role or same position as me.\nNote to fix this: MOD BOTs role or any other role given to MOD BOT must be in higher position than the top role of the member you want to ban\n**Executed by** {ctx.author.mention}\nTried to ban: {member.mention}""",
+                color = discord.Color.green()
+            )
+            await ctx.send(embed = dgh2, delete_after = 30)
+            return
+        elif ctx.author.top_role.position == member.top_role.position:
+            dgh5 = discord.Embed(
+                description = f"""The member you mentioned has the same role or position as yours\nReason of cancellation: Your top role and the top role of the member you want to ban is the same\n**Executed by** {ctx.author.mention}\n**Tried to ban:** {member.mention}""",
+                color = discord.Color.green()
+            )
+            await ctx.send(embed = dgh5, delete_after = 30)
+            return
         
            
         try:
