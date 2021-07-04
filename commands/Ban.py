@@ -25,7 +25,7 @@ class Commands(commands.Cog, name="Commands"):
             await ctx.message.add_reaction('❌')
             embed = discord.Embed(
                 title = "**BAN COMMAND EXECUTION FAILED**",
-                description = f"""**BAN COMMAND EXECUTION WAS CANCELLED BECAUSE THE USER YOU MENTIONED IS EITHER A USER WHO IS NOT A MEMBER OF THIS SERVER OR THIS IS YOUR ID.
+                description = f"""**BAN COMMAND EXECUTION WAS CANCELLED BECAUSE THE USER YOU MENTIONED IS YOUR ID.
     Executed by { ctx.author.mention }**""",
             color=ctx.author.color
             )
