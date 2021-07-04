@@ -22,10 +22,11 @@ class Commands(commands.Cog, name="Commands"):
         print("hello")
         
         if member == ctx.message.author:
-            
+            await ctx.message.add_reaction('❌')
             embed = discord.Embed(
                 title = "**BAN COMMAND EXECUTION FAILED**",
-                description = f"""**BAN COMMAND EXECUTION WAS CANCELLED BECAUSE THE USER YOU MENTIONED IS YOUR ID.\nExecuted by { ctx.author.mention }**""",
+                description = f"""**BAN COMMAND EXECUTION WAS CANCELLED BECAUSE THE USER YOU MENTIONED IS EITHER A USER WHO IS NOT A MEMBER OF THIS SERVER OR THIS IS YOUR ID.
+    Executed by { ctx.author.mention }**""",
             color=ctx.author.color
             )
             embed.set_footer(text= f"The command was used by {ctx.author.mention}")
@@ -60,7 +61,7 @@ class Commands(commands.Cog, name="Commands"):
         elif reason == None:
             reason = "no reason applied"
         elif member.bot:
-            
+            await ctx.message.add_reaction('❌')
             embed = discord.Embed(
                 title = "**BAN COMMAND EXECUTION FAILED**",
                 description = f"""**BAN COMMAND WAS CANCELLED BECAUSE THE MEMBER YOU MENTION IS A BOT.
@@ -84,8 +85,8 @@ class Commands(commands.Cog, name="Commands"):
         await member.ban(reason= reason)
         embed=discord.Embed(
             title="**MODERATION COMMAND**",
-            description=f"""{member.mention}  is banned from the server by  { ctx.author.mention }\n**Executed by:** {ctx.author.mention}\n**Reason: {reason}\n**Banned member: {member.mention}""",
-            color=discord.Color.green())
+            description=f"""{member.mention}  is banned from the server by  { ctx.author.mention }""",
+            color=ctx.author.color)
         embed.set_thumbnail(url = 'https://media.discordapp.net/attachments/841947091659653162/854969004699156480/output-onlinegiftools.gif')
         embed.set_author(name = "BAN COMMAND EXECUTED", icon_url= "https://media.discordapp.net/attachments/841947091659653162/854969004699156480/output-onlinegiftools.gif")
         await ctx.send(embed = embed)
@@ -94,39 +95,73 @@ class Commands(commands.Cog, name="Commands"):
     @ban.error
     async def on_command_error(self, ctx, error):
         if isinstance(ctx.channel, discord.channel.DMChannel):
-            
-            embed = discord.Embed(
-                title = "**BAN COMMAND EXECUTION FAILED**",
-                description = f"""**BAN COMMAND CANNOT BE USED IN A DM CONVERSATION.\nExecuted by { ctx.author.mention }**""",
-                color=0xd89522
-            )
-            embed.set_footer(text= f"The command was used by {ctx.author.mention}")
-       
-            await ctx.send(embed = embed)
-            return
+            try:
+                await ctx.message.add_reaction('❌')
+                embed = discord.Embed(
+                    title = "**BAN COMMAND EXECUTION FAILED**",
+                    description = f"""**BAN COMMAND CANNOT BE USED IN A DM CONVERSATION.\nExecuted by { ctx.author.mention }**""",
+                    color=0xd89522
+                )
+                embed.set_footer(text= f"The command was used by {ctx.author.mention}")
+        
+                await ctx.send(embed = embed)
+                return
+            except:
+                embed = discord.Embed(
+                    title = "**BAN COMMAND EXECUTION FAILED**",
+                    description = f"""**BAN COMMAND CANNOT BE USED IN A DM CONVERSATION.\nExecuted by { ctx.author.mention }**""",
+                    color=0xd89522
+                )
+                embed.set_footer(text= f"The command was used by {ctx.author.mention}")
+        
+                await ctx.send(embed = embed)
+                return
         elif isinstance(error, commands.MissingPermissions):
-            
-            embed=discord.Embed(
-            title="**MODERATION COMMAND EXECUTION CANCELLED**",
-            description=f"""You don't have permission to use the ban command.\nExecuted by { ctx.author.mention }""",
-            color=ctx.author.color)
-            embed.set_thumbnail(url = 'https://media.discordapp.net/attachments/841947091659653162/854969004699156480/output-onlinegiftools.gif')
-            error = await ctx.send(embed = embed)
-            await ctx.author.send(f'{ ctx.author.mention } you dont have permission to ban anyone in { ctx.guild.name }')
-            await asyncio.sleep(10)
-            await ctx.message.delete()
-            await error.delete()
-            return
+            try:
+                await ctx.message.add_reaction('❌')    
+                embed=discord.Embed(
+                title="**MODERATION COMMAND EXECUTION CANCELLED**",
+                description=f"""You don't have permission to use the ban command.\nExecuted by { ctx.author.mention }""",
+                color=ctx.author.color)
+                embed.set_thumbnail(url = 'https://media.discordapp.net/attachments/841947091659653162/854969004699156480/output-onlinegiftools.gif')
+                error = await ctx.send(embed = embed)
+                await ctx.author.send(f'{ ctx.author.mention } you dont have permission to ban anyone in { ctx.guild.name }')
+                await asyncio.sleep(10)
+                await ctx.message.delete()
+                await error.delete()
+                return
+            except:
+                embed4353534=discord.Embed(
+                title="**MODERATION COMMAND EXECUTION CANCELLED**",
+                description=f"""You don't have permission to use the ban command.\nExecuted by { ctx.author.mention }""",
+                color=ctx.author.color)
+                embed.set_thumbnail(url = 'https://media.discordapp.net/attachments/841947091659653162/854969004699156480/output-onlinegiftools.gif')
+                error = await ctx.send(embed = embed4353534)
+                await ctx.author.send(f'{ ctx.author.mention } you dont have permission to ban anyone in { ctx.guild.name }')
+                await asyncio.sleep(10)
+                await ctx.message.delete()
+                await error.delete()
+                return
         elif isinstance(error, commands.MissingRequiredArgument):
-         
-            embed9=discord.Embed(
-            description=f"""You must mention a user to ban.\n**Executed by **{ ctx.author.mention }""",
-            color=0xd89522)
-            error9 = await ctx.send(embed = embed9)
-            await asyncio.sleep(10)
-            await ctx.message.delete()
-            await error9.delete()
-
+            try:
+                await ctx.message.add_reaction('❌')
+                embed9=discord.Embed(
+                description=f"""You must mention a user to ban.\n**Executed by **{ ctx.author.mention }""",
+                color=0xd89522)
+                error9 = await ctx.send(embed = embed9)
+                await asyncio.sleep(10)
+                await ctx.message.delete()
+                await error9.delete()
+                return
+            except:
+                embed9=discord.Embed(
+                description=f"""You must mention a user to ban.\n**Executed by **{ ctx.author.mention }""",
+                color=0xd89522)
+                error9 = await ctx.send(embed = embed9)
+                await asyncio.sleep(10)
+                await ctx.message.delete()
+                await error9.delete()
+                return
         
 
 def setup(bot):
